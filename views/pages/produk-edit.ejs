@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card card-custom p-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <a href="/produk" class="btn btn-outline-secondary me-3 btn-sm">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <h4 class="fw-bold m-0">Edit Data Produk</h4>
+                    </div>
+
+                    <form action="/produk/edit/<%= produk.id %>" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nama Produk</label>
+                            <input type="text" name="nama_produk" class="form-control" value="<%= produk.nama_produk %>" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Harga (Rp)</label>
+                                <input type="number" name="harga" class="form-control" value="<%= produk.harga %>" min="0" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Jumlah Stok</label>
+                                <input type="number" name="stok" class="form-control" value="<%= produk.stok %>" min="0" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Deskripsi</label>
+                            <textarea name="deskripsi" class="form-control" rows="3"><%= produk.deskripsi %></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <a href="/produk" class="btn btn-light border">Batal</a>
+                            <button type="submit" class="btn btn-primary fw-semibold">
+                                <i class="fa-solid fa-pen-to-square me-1"></i> Perbarui Produk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Inventaris Produk</title>
+    <meta name="description" content="Sistem manajemen inventaris produk berbasis web untuk mengelola data stok barang secara realtime.">
+    <link rel="icon" type="image/png" href="/docs/Logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            position: relative;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .content-wrapper {
+            flex: 1;
+        }
+
+        .card-custom { border-radius: 12px; border: none; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        
+        @keyframes detakLogo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.10); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-dark bg-primary shadow-sm px-3 px-md-4" style="height: 75px !important; margin-bottom: 24px !important;">
+        <div class="container-fluid d-flex align-items-center justify-content-between p-0" style="height: 100% !important;">
+            
+            <a class="navbar-brand fw-bold fs-5 fs-md-4 d-flex align-items-center m-0 text-decoration-none text-truncate" href="/produk" style="height: 100% !important;">
+                <img src="/docs/Logo.png" alt="Logo Sistem Inventaris Produk" class="me-2 rounded shadow-sm object-fit-cover" 
+                     style="height: 60px !important; width: 60px !important; object-fit: contain; background: transparent !important; box-shadow: none !important; border: none !important; animation: detakLogo 1.5s infinite ease-in-out;">
+                <span class="text-truncate">Inventaris Produk</span>
+            </a>
+
+            <div class="d-flex align-items-center text-white">
+                <div class="bg-white bg-opacity-10 px-3 py-1 rounded-pill" style="font-size: 0.85rem;">
+                    <i class="fa-solid fa-box me-1"></i> <span class="d-none d-sm-inline">Total Jenis:</span> <strong><%= typeof produk !== 'undefined' && produk ? produk.length : 0 %></strong>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
